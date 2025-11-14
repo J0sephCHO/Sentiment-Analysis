@@ -41,3 +41,88 @@ You now have a working local system that can:
 Scrape reviews from a configured website. Send those reviews to a local Flask server running your trained model. Get predictions ('CG' or 'OR') from the server. Save the original review, predicted label, and source URL into a local SQLite database (reviews.db). Allows you to view the saved data in the database. This is a significant accomplishment! You have built and integrated a machine learning model with web scraping and data persistence.
 
 We are now in the "Enhance for Production" phase, with data storage successfully implemented for scraped data. The next steps involve making the system more robust and ready for enterprise use, starting with production deployment strategies.
+
+Setup/Usage instructions
+1. Clone the repository
+   -  git clone https://github.com/J0sephCHO/Sentiment-Analysis.git
+  
+2. Install Dependencies
+Core Data Handling & Machine Learning Framework:
+* pandas (pd) - For data manipulation and DataFrame operations.
+* tensorflow (tf) - The primary machine learning framework.
+* tensorflow.keras.models (Sequential, load_model) - For defining, building, and loading deep learning models.
+* tensorflow.keras.layers (Embedding, LSTM, Dense, Dropout) - Neural network layers.
+* numpy (np) - Fundamental package for numerical computation in Python (often used implicitly by TensorFlow/Keras).
+
+Text Preprocessing & Natural Language Processing (NLP):
+* nltk - Natural Language Toolkit for various NLP tasks.
+* nltk.corpus (stopwords) - To access the list of common stopwords.
+* nltk.stem (PorterStemmer) - For reducing words to their base or root form.
+* re - Python's regular expression module for text cleaning.
+* tensorflow.keras.preprocessing.text (Tokenizer) - For converting text into sequences of numbers.
+* tensorflow.keras.preprocessing.sequence (pad_sequences) - For ensuring all text sequences have the same length.
+  
+Model Evaluation & Utilities:
+* sklearn.model_selection (train_test_split) - For splitting data into training and testing sets.
+* sklearn.preprocessing (LabelEncoder) - For converting categorical labels into numerical format.
+* sklearn.metrics (precision_score, recall_score, f1_score, confusion_matrix) - For evaluating model performance.
+* matplotlib.pyplot (plt) - For creating static, interactive, and animated visualizations.
+* seaborn (sns) - For making statistical graphics based on matplotlib.
+* pickle - For serializing and deserializing Python objects (used to save/load the Tokenizer).
+  
+Web Scraping (Selenium-based):
+* selenium - The main library for automating web browsers.
+* webdriver_manager (ChromeDriverManager) - For automatically downloading and managing WebDriver binaries for Chrome.
+* selenium.webdriver.chrome.service (Service) - Used with ChromeDriverManager to specify the WebDriver executable.
+* selenium.webdriver.chrome.options (Options) - To configure options for the Chrome browser (e.g., headless mode).
+* selenium.webdriver.common.by (By) - For locating elements within a webpage.
+* selenium.webdriver.support.ui (WebDriverWait) - For explicitly waiting for certain conditions to occur before proceeding.
+* selenium.webdriver.support (expected_conditions as EC) - Predefined conditions for WebDriverWait.
+* bs4 (BeautifulSoup) - For parsing HTML and XML documents.
+* requests - For making HTTP requests (though Selenium often handles this for full page loads).
+
+Flask Web Server & Deployment:
+* flask (Flask, request, jsonify) - The micro web framework used to build the API server.
+* waitress (implicit, through waitress-serve) - A production-quality pure-Python WSGI server.
+* logging - Python's standard library for logging events.
+* sqlite3 - Python's standard library for working with SQLite databases.
+
+Other Utilities:
+* IPython (get_ipython, display) - Jupyter/Colab specific utilities for rich output.
+* google.colab (drive) - For mounting Google Drive in Colab.
+* time - For time-related functions (e.g., delays in scraping).
+* random - For generating random numbers (e.g., for random delays).
+
+3.Run the app:
+streamlit runn app.py
+
+4. Navigate to the displayed local URL in your browswer to use the app.
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
